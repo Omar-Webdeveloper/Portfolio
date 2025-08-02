@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omar Abo Jolban Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#57b5e7',secondary:'#8dd3c7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.skill-bar {
+transition: width 1s ease-in-out;
+}
+.project-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.timeline-item {
+position: relative;
+}
+.timeline-item::before {
+content: '';
+position: absolute;
+left: -1.5rem;
+top: 0.5rem;
+width: 1rem;
+height: 1rem;
+background: #57b5e7;
+border-radius: 50%;
+border: 3px solid white;
+box-shadow: 0 0 0 3px #57b5e7;
+}
+.timeline-line {
+position: absolute;
+left: -1rem;
+top: 2rem;
+width: 2px;
+height: calc(100% - 1rem);
+background: linear-gradient(to bottom, #57b5e7, #8dd3c7);
+}
+html {
+scroll-behavior: smooth;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="font-['Pacifico'] text-2xl text-primary">Portfolio</div>
+<div class="hidden md:flex space-x-8">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="#experience" class="text-gray-700 hover:text-primary transition-colors">Experience</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#education" class="text-gray-700 hover:text-primary transition-colors">Education</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</div>
+<button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+<div class="px-6 py-4 space-y-2">
+<a href="#home" class="block py-2 text-gray-700">Home</a>
+<a href="#experience" class="block py-2 text-gray-700">Experience</a>
+<a href="#skills" class="block py-2 text-gray-700">Skills</a>
+<a href="#projects" class="block py-2 text-gray-700">Projects</a>
+<a href="#education" class="block py-2 text-gray-700">Education</a>
+<a href="#contact" class="block py-2 text-gray-700">Contact</a>
+</div>
+</div>
+</nav>
+<section id="home" class="min-h-screen flex items-center relative overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20modern%20workspace%20with%20clean%20desk%20setup%2C%20laptop%2C%20notebooks%2C%20and%20soft%20natural%20lighting%20from%20large%20windows%2C%20minimalist%20office%20environment%20with%20plants%2C%20contemporary%20design%2C%20neutral%20color%20palette%20with%20subtle%20blue%20accents%2C%20serene%20and%20productive%20atmosphere%2C%20high-quality%20photography%20style&width=1920&height=1080&seq=hero-bg&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="space-y-4">
+<h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+Hello, I'm
+<span class="text-primary">Omar Abo Jolban</span>
+</h1>
+<p class="text-xl text-gray-600">Full Stack .NET Developer</p>
+<p class="text-lg text-gray-600 leading-relaxed">
+Experienced Full Stack Developer specializing in .NET technologies and modern web development. Proficient in building scalable applications using C#, ASP.NET Core, and Angular, following best practices and three-tier architecture principles.
+</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">React</span>
+<span class="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">Node.js</span>
+<span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">UI/UX Design</span>
+<span class="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">TypeScript</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Download Resume
+</button>
+<button class="px-8 py-3 border-2 border-primary text-primary rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+View Projects
+</button>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="relative">
+<div class="w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mx-auto">
+<img src="https://media.licdn.com/dms/image/v2/D4E03AQErGzR3ZUz9tQ/profile-displayphoto-shrink_800_800/B4EZc6XgwVHYAc-/0/1749030931912?e=1756944000&v=beta&t=jc-AZEDeTjJBpi7AdnwA0h3FdBpIIYGsu7WZlDzE_-8" alt="Omar Abo Jolban" class="w-72 h-72 rounded-full object-cover object-center">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="experience" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+<p class="text-xl text-gray-600">My journey through various roles and companies</p>
+</div>
+<div class="relative">
+<div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
+<div class="space-y-12">
+<div class="timeline-item pl-20">
+<div class="timeline-line"></div>
+<div class="bg-gray-50 rounded-xl p-8">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h3 class="text-2xl font-bold text-gray-900">Web Development Intern</h3>
+<p class="text-lg text-primary font-medium">Nabtaty, Amman/Jordan</p>
+</div>
+<span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">May 2025 - June 2025</span>
+</div>
+<p class="text-gray-600 mb-4">
+Developed a multilingual, SEO-optimized plant sales platform. Worked with Angular 18, ASP.NET Core 8, MySQL, and JWT authentication. Implemented user profile features and admin dashboard.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Angular</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">ASP.NET Core</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">MySQL</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JWT</span>
+</div>
+</div>
+</div>
+<div class="timeline-item pl-20">
+<div class="timeline-line"></div>
+<div class="bg-gray-50 rounded-xl p-8">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h3 class="text-2xl font-bold text-gray-900">Full-Stack Web Development Trainee</h3>
+<p class="text-lg text-primary font-medium">Orange Coding Academy, Irbid/Jordan</p>
+</div>
+<span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">Dec 2024 - June 2025</span>
+</div>
+<p class="text-gray-600 mb-4">
+Successfully completed comprehensive training in full-stack development, developed dynamic web applications, and managed databases using SQL Server. Implemented responsive designs using Bootstrap and Angular.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">HTML/CSS</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JavaScript</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">C#</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Angular</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">SQL Server</span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<section id="skills" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+<p class="text-xl text-gray-600">Technologies and tools I work with</p>
+</div>
+<div class="grid lg:grid-cols-5 gap-8">
+<div class="bg-white rounded-xl p-8 shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
+<i class="ri-code-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-6">Frontend Development</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">HTML/CSS</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">JavaScript</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">TypeScript</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Bootstrap</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Angular</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Web Forms</span>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 rounded-lg mb-6">
+<i class="ri-server-line text-2xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-6">Backend Development</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">C#</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">ASP.NET Core MVC</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">ASP.NET Core API</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Python</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Java</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">PHP</span>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
+<i class="ri-database-2-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-6">Database & Tools</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">SQL Server</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">MySQL</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Git & GitHub</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Visual Studio</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">VS Code</span>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 rounded-lg mb-6">
+<i class="ri-settings-line text-2xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-6">Development Practices</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Scrum</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Agile</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">OOP</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Three Tier Architecture</span>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
+<i class="ri-user-heart-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-6">Soft Skills</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Leadership & Initiative</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Problem-Solving</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Critical Thinking</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Communication</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Time Management</span>
+</div>
+
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">AI Literacy</span>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="projects" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+<p class="text-xl text-gray-600">Some of my recent work and achievements</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="project-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Modern%20quiz%20website%20interface%20with%20clean%20design%2C%20question%20cards%2C%20progress%20tracking%2C%20educational%20platform%20with%20blue%20accents%2C%20professional%20testing%20system&width=400&height=300&seq=project-1&orientation=landscape" alt="Quiz Website" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Quiz Website</h3>
+<p class="text-gray-600 mb-4">An interactive quiz platform featuring multiple question types, score tracking, and instant feedback. Built with modern web technologies for an engaging learning experience.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">HTML</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">CSS</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">JavaScript</span>
+</div>
+<div class="flex gap-3">
+<a href="https://github.com/Omar-Webdeveloper/Quiz-Website-test-1" target="_blank" class="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors">
+<i class="ri-github-line"></i>
+<span class="text-sm">View Code</span>
+</a>
+</div>
+</div>
+</div>
+<div class="project-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20library%20management%20system%20interface%20with%20book%20catalog%2C%20modern%20search%20functionality%2C%20clean%20design%20with%20warm%20colors%2C%20digital%20library%20dashboard%2C%20elegant%20reading%20environment&width=400&height=300&seq=project-2&orientation=landscape" alt="Library Management System" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Library Management System</h3>
+<p class="text-gray-600 mb-4">A comprehensive library management solution with book tracking, user management, and borrowing system. Features an intuitive interface for both users and administrators.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">HTML</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">CSS</span>
+<span class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">JavaScript</span>
+</div>
+<div class="flex gap-3">
+<a href="https://github.com/Omar-Webdeveloper/Our-Library-Website" target="_blank" class="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors">
+<i class="ri-github-line"></i>
+<span class="text-sm">View Code</span>
+</a>
+</div>
+</div>
+</div>
+<div class="project-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20HR%20management%20system%20interface%20with%20employee%20profiles%2C%20modern%20dashboard%2C%20clean%20design%20with%20professional%20color%20scheme%2C%20staff%20management%20platform%2C%20corporate%20HR%20software&width=400&height=300&seq=project-3&orientation=landscape" alt="HR Management System" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">HR Management System</h3>
+<p class="text-gray-600 mb-4">A robust HR management platform featuring employee data management, attendance tracking, and performance evaluation tools. Streamlines HR processes and improves efficiency.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">HTML</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">CSS</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">JavaScript</span>
+</div>
+<div class="flex gap-3">
+<a href="https://github.com/Omar-Webdeveloper/Project-HR-Managment" target="_blank" class="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors">
+<i class="ri-github-line"></i>
+<span class="text-sm">View Code</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="education" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Education & Certifications</h2>
+<p class="text-xl text-gray-600">My academic background and professional certifications</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-8">
+<div class="space-y-6">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Education</h3>
+<div class="bg-white rounded-xl p-6 shadow-sm">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
+<i class="ri-graduation-cap-line text-2xl text-primary"></i>
+</div>
+<div class="flex-1">
+<h4 class="text-lg font-bold text-gray-900">Full-Stack Web Development Bootcamp</h4>
+<p class="text-primary font-medium">Orange Coding Academy</p>
+<p class="text-sm text-gray-500 mb-2">Dec 2024 – June 2025</p>
+<p class="text-gray-600 text-sm">Intensive course in Full-Stack Web Development in collaboration with Simplon.co and Princess Sumaya University for Technology (PSUT).</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 rounded-lg">
+<i class="ri-book-line text-2xl text-secondary"></i>
+</div>
+<div class="flex-1">
+<h4 class="text-lg font-bold text-gray-900">Bachelor's Degree</h4>
+<p class="text-secondary font-medium">Yarmouk University</p>
+<p class="text-sm text-gray-500 mb-2">Jan 2020 – Feb 2024</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Courses & Certificates</h3>
+<div class="space-y-4">
+<div class="bg-white rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-lg font-bold text-gray-900">English Language Certificate</h4>
+<span class="text-sm text-gray-500">2024</span>
+</div>
+<p class="text-primary font-medium mb-2">British Council – Jordan</p>
+<p class="text-gray-600 text-sm">Professional English language certification demonstrating proficiency in business communication.</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-lg font-bold text-gray-900">Web Development Courses</h4>
+<span class="text-sm text-gray-500">2024</span>
+</div>
+<p class="text-secondary font-medium mb-2">Orange Coursat</p>
+<ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
+<li>Course in HTML Scripting Language</li>
+<li>Course in CSS Scripting Language</li>
+<li>Course in JavaScript Programming Language</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-lg font-bold text-gray-900">Cyber Warriors Competition Certificate</h4>
+<span class="text-sm text-gray-500">2023</span>
+</div>
+<p class="text-primary font-medium mb-2">National Cyber Security Center</p>
+<p class="text-gray-600 text-sm">Certificate of Attendance recognizing participation and achievement in cybersecurity competition.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+<p class="text-xl text-gray-600">Let's discuss your next project or opportunity</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="space-y-8">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
+<i class="ri-mail-line text-xl text-primary"></i>
+</div>
+<div>
+<p class="text-gray-600 text-sm">Email</p>
+<p class="text-gray-900 font-medium">omarabojolban9@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 rounded-lg">
+<i class="ri-phone-line text-xl text-secondary"></i>
+</div>
+<div>
+<p class="text-gray-600 text-sm">Phone</p>
+<p class="text-gray-900 font-medium">+962792971776</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
+<i class="ri-map-pin-line text-xl text-primary"></i>
+</div>
+<div>
+<p class="text-gray-600 text-sm">Location</p>
+<p class="text-gray-900 font-medium">Irbid, Jordan</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 rounded-lg">
+<i class="ri-linkedin-fill text-xl text-secondary"></i>
+</div>
+<div>
+<p class="text-gray-600 text-sm">LinkedIn</p>
+<a href="https://www.linkedin.com/in/omarabojolban/" class="text-gray-900 font-medium hover:text-primary transition-colors">Omar Abo Jolban</a>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 rounded-lg">
+<i class="ri-time-line text-xl text-secondary"></i>
+</div>
+<div>
+<p class="text-gray-600 text-sm">Timezone</p>
+<p class="text-gray-900 font-medium">PST (UTC-8)</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Follow Me</h3>
+<div class="flex gap-4">
+<a href="https://www.linkedin.com/in/omarabojolban/" class="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-lg transition-colors">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+<a href="https://github.com/Omar-Webdeveloper" class="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-lg transition-colors">
+<i class="ri-github-fill text-xl"></i>
+</a>
+<a href="https://x.com/OJolban" class="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-lg transition-colors">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="https://wa.me/+962792971776
+" class="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-lg transition-colors">
+<i class="ri-dribbble-fill text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl p-8">
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="a70325a3-8131-4c70-8682-09ac0e43a811">
+    <!-- <input type="hidden" name="redirect" value="https://your-portfolio.com/thank-you.html"> -->
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+<input type="text" name="first_name" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="John">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+<input type="text" name="last_name" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="Doe">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" name="email" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="john@example.com">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+<input type="text" name="subject"class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="Project Discussion">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea rows="5" name="message" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
+</div>
+<button type="submit" class="w-full px-8 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-8 mb-8">
+<div>
+<div class="font-['Pacifico'] text-2xl text-primary mb-4">Portfolio</div>
+<p class="text-gray-400 mb-4">Full Stack Developer & UI/UX Designer passionate about creating exceptional digital experiences.</p>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-colors">
+<i class="ri-github-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Quick Links</h3>
+<div class="space-y-2">
+<a href="#home" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+<a href="#experience" class="block text-gray-400 hover:text-white transition-colors">Experience</a>
+<a href="#skills" class="block text-gray-400 hover:text-white transition-colors">Skills</a>
+<a href="#projects" class="block text-gray-400 hover:text-white transition-colors">Projects</a>
+<a href="#education" class="block text-gray-400 hover:text-white transition-colors">Education</a>
+<a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Contact Info</h3>
+<div class="space-y-2 text-gray-400">
+<p>omarabojolban9@gmail.com</p>
+<p>+962792971776</p>
+<p>Irbid, Jordan</p>
+</div>
+<button class="mt-4 px-6 py-2 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Download Resume
+</button>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+<p>&copy; 2025 Omar Abo Jolban. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script id="mobile-menu-toggle">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+});
+});
+});
+</script>
+<script id="smooth-scrolling">
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetSection = document.querySelector(targetId);
+if (targetSection) {
+const offsetTop = targetSection.offsetTop - 80;
+window.scrollTo({
+top: offsetTop,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="skill-bars-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const skillBars = document.querySelectorAll('.skill-bar');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const bar = entry.target;
+const width = bar.style.width;
+bar.style.width = '0%';
+setTimeout(() => {
+bar.style.width = width;
+}, 100);
+}
+});
+}, { threshold: 0.5 });
+skillBars.forEach(bar => observer.observe(bar));
+});
+</script>
+</body>
+</html>
